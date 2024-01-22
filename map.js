@@ -35,18 +35,17 @@ var weatherMap= {
                         lat : e.latlng.lat,
                         lng: e.latlng.lng
                     }
-                    longPressTimeout = setTimeout(function(){
+                    if(e.originalEvent.detail == 2) //double click
+                    {
                         weatherMap.setWeatherPopUpData(pointLocation);
-                    }, 1000);
+                    }
+                    else //long press
+                    {
+                        longPressTimeout = setTimeout(function(){
+                            weatherMap.setWeatherPopUpData(pointLocation);
+                        }, 2000);
+                    }
                 });
-
-                map.on('dblclick', function(e){
-                    var pointLocation = {
-                        lat : e.latlng.lat,
-                        lng: e.latlng.lng
-                    };
-                    weatherMap.setWeatherPopUpData(pointLocation);
-                })
 
                 map.on('mouseup, mousemove', function(){
                     if(longPressTimeout){
