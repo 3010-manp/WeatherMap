@@ -1,0 +1,26 @@
+#map {
+    height: 90vh;
+    width: 100%;
+}
+
+#map .current-temp {
+    font-size: large;
+}
+
+#map hr {
+    margin: 5px 0;
+}
+
+.question-mark {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: lightyellow;
+    font-size: large;
+    margin-right: 10px;
+}
+
+.dev-info {
+    margin: 5px 5px 0 0; 
+    float: right;
+}
